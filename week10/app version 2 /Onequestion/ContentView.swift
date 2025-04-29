@@ -1,8 +1,6 @@
 
 import SwiftUI
 
-// from ChatGPT prompt:
-
 struct ContentView: View {
     @State private var question = QuestionBank.randomQuestion()
     @State private var favorites: [String] = []
@@ -43,7 +41,6 @@ struct ContentView: View {
                             favorites.append(question)
                             showSavedAlert = true
                         }
-                        print("favorites", favorites)
                     }) {
                         Label("Save", systemImage: "heart")
                     }
@@ -73,9 +70,4 @@ struct QuestionBank {
     static func randomQuestion() -> String {
         questions.randomElement() ?? ""
     }
-}
-
-
-#Preview {
-    ContentView()
 }
